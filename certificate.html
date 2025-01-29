@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Certificate Template</title>
+    <link rel="stylesheet" href="template.css">
+</head>
+<body>
+    <div class="certificate" id="certificate">
+        <div class="certificate-border">
+           <!--<img src="D:\logo.jpeg" alt="logo">-->
+            <h1>CERTIFICATE</h1>
+            <h3>of Achievement</h3>
+            <p class="certify">This is to certify that</p>
+            <h2 id="certName"></h2>
+            <p class="description">Has successfully completed the course</p>
+            <p class="date">Awarded on: <span id="certDate"></span></p>
+            <div class="signature-section">
+                <div class="signature">
+                    <hr>
+                    <p>Signature</p>
+                </div>
+                <div class="issuer">
+                    <hr>
+                    <p>Authorized Issuer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search)
+
+        const gender = urlParams.get('gender');
+        const firstName = urlParams.get('firstName');
+        const lastName = urlParams.get('lastName');
+        const dateOfIssue = urlParams.get('dateOfIssue');
+
+        const certName = gender + " " + firstName + " " + lastName;
+        document.getElementById('certName').textContent = certName;
+        document.getElementById('certDate').textContent = dateOfIssue;
+    </script>
+</body>
+</html>
